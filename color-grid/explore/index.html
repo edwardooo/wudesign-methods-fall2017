@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>yoooooooo</title>
+</head>
+<style type="text/css">
+
+	.col
+{
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+.col:hover {
+    background-color:white;
+    transition: 1s;
+}
+
+.last{
+    float: right;
+    width: 25%;
+    height: 100%;
+}
+.row{
+	float:top;
+    border: opx solid green; 
+    height: 25%;
+    overflow: auto;
+    background-color: red;
+}
+.rowlast{
+	float: bottom;
+	border: opx solid green; 
+    height: 25%;
+    overflow: auto;
+    background-color: red;
+}
+html{
+	padding: 0;
+	height: 100%;
+	margin: 0;
+}
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+header{
+	padding: 0;
+	margin: 0;
+}
+
+.c1 {
+	background-color: black;
+}
+
+.c2 {
+	background-color: black;
+}
+
+.c3 {
+	background-color: black;
+}
+
+.c4 {
+	background-color: black;
+}
+
+
+
+.crazy { 
+    background-color: #fff;
+     -webkit-animation: random 3s infinite;
+     animation: random 3s infinite;
+}
+
+@keyframes  random {
+    15% { background-color: red; } 
+    30% { background-color: yellow; } 
+    45% { background-color: green; } 
+    60% { background-color: blue; }
+    75% { background-color: white; }  
+}
+
+</style>
+<body>
+
+<div class="row">
+    <div class="col c1"></div>
+    <div class="col c2"></div>
+    <div class="col c3"></div>
+    <div class="col last c4"></div>
+</div>
+
+<div class="row">
+    <div class="col c4"></div>
+    <div class="col c3"></div>
+    <div class="col c2"></div>
+    <div class="col last c1"></div>
+</div>
+
+<div class="row">
+    <div class="col c3"></div>
+    <div class="col c4"></div>
+    <div class="col c1"></div>
+    <div class="col last c2"></div>
+</div>
+
+<div class="rowlast">
+    <div class="col c2"></div>
+    <div class="col c1"></div>
+    <div class="col c4"></div>
+    <div class="col last c3"></div>
+</div>
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+$( ".col" ).click(function() {
+console.log("hello")
+$(this).toggleClass('crazy');
+});
+</script>
+
+</body>
+</html>
+
