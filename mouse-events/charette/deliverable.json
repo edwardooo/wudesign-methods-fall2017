@@ -2,7 +2,7 @@
 	"entrypoints" : [
 		{
 			"name" : "1st example",
-			"file" : "index.html"
+			"file" : "first.html"
 		},
 		{
 			"name" : "2nd example",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		background-color: #F7F7F7;
+		margin: 0;
+    height: 100%;
+    transition: 0.5s;
+	}
+	.red { 
+    background-color: red;
+    transition: 0.5s;
+}
+</style>
+<body>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "body" ).click(function() {
+	console.log("hello")
+	$(this).toggleClass('red');
+	});
+</script>
+</body>
+</html>
