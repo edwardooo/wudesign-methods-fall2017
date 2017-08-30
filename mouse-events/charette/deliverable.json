@@ -7,6 +7,27 @@
 		{
 			"name" : "2nd example",
 			"file" : "randomcolor.html"
+		},
+		{
+			"name" : "morphing box",
+			"file" : "randombox.html"
+		},
+		{
+			"name" : "morphing text",
+			"file" : "randomtext.html"
+		},
+		{
+			"name" : "illuminati01",
+			"file" : "randomsumthin.html"
+		},
+		{
+			"name" : "illuminati02",
+			"file" : "illuminati2.html"
+		},
+		{
+			"name" : "illuminati02",
+			"file" : "illuminati2.html"
 		}
+
 	]
 }

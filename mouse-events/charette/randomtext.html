@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+	}
+
+	div {
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+
+	}
+}
+</style>
+<body>
+<div class="default">
+	Yuh, yuh, yuh <br>
+Poppin' these pills in my coupe<br>
+I'm on the roof, move like I'm Batman<br>
+Um, damn, what, Margiela madman<br>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var size = Math.floor(10+ Math.random() * 200);
+		 $(this).css('font-size', size);
+	});
+</script>
+</body>
+</html>
