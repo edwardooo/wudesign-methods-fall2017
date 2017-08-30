@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+	}
+	div {
+		margin: 0;
+    height: 100%;
+	}
+	.white {
+		background-color: #E8E8E8;
+		transition: 0.3s;
+	}
+	.random { 
+    transition: 0.3s;
+}
+</style>
+<body>
+<div class="white">
+	
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( ".white" ).click(function() {
+		var colorR = Math.floor((Math.random() * 256));
+     	var colorG = Math.floor((Math.random() * 256));
+     	var colorB = Math.floor((Math.random() * 256));
+		$('.random').css("background-color", "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		$( "div" ).removeClass( 'white' );
+		$("div").addClass('random');
+		
+		console.log("hello")
+	});
+
+	$( ".random" ).click(function() {
+		$( "div" ).removeClass( 'random' );
+		$("div").addClass('white');		
+	});
+</script>
+</body>
+</html>
