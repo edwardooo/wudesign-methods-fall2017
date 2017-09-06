@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+    transition: 1s;
+	}
+
+	div { left: 2%;
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+
+	}
+
+		.scared{
+		-webkit-animation: shake 0.5s infinite linear;
+     animation: shake 0.5s infinite linear;
+     transition: 0.6s;
+	}
+
+	@keyframes shake {
+	  10%, 90% {
+	    transform: translate3d(-2px, 0, 0);
+	  }
+
+	  20%, 80% {
+	    transform: translate3d(4px, 0, 0);
+	  }
+
+	  30%, 50%, 70% {
+	    transform: translate3d(-7px, 0, 0);
+	  }
+
+	  40%, 60% {
+	    transform: translate3d(7px, 0, 0);
+	  }
+	}
+}
+</style>
+<body>
+<div id="flip">
+	DONT CLICK ME
+</div>
+
+<div id="panel">
+	man,, its september already? 😲😲 huh.. the days just fly by now. its crazy how this shit just slips you by. <br> i mean, it'll be 2018 in no time, then whats after that? its unreal
+think i might take a drive, just think about the future and stuff. get my head straight 😕 <br> a nice relaxing drive, i could drive forever on the highway. helps me thingk. nothing like a drive to clear the mind. anybody want anything from the gas station? f*ck it, my shout aha
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+	$( "#flip" ).click(function() {
+		$("#panel").slideDown("slow");
+		});
+	});
+</script>
+</body>
+</html>

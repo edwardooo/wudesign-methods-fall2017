@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+	top: 40%;
+		margin: 0;
+    height: 100%;
+	}
+
+	div {
+		position: absolute;
+   		top: 20%; 
+   		left: 20%;                        /* 3 */
+		margin-left: auto;
+		margin-right: auto;
+		transition: 0.6s;
+	}
+	.circle {
+	  border-radius: 50%;
+	width: 300px;
+	height: 300px; 
+	background: blue;
+	  transition: 0.6s;
+	}
+	.circle:hover {
+		cursor: pointer;
+		top: 18%;
+	}
+	.animated{
+		-webkit-animation: spin 1s infinite linear;
+     animation: spin 1s infinite linear;
+     transition: 0.6s;
+	}
+
+	@keyframes  spin {
+       0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}  
+}
+}
+</style>
+
+<body>
+
+<div class="circle">
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		 $(this).toggleClass("animated");
+		 var colorR = Math.floor((Math.random() * 256));
+     	var colorG = Math.floor((Math.random() * 256));
+     	var colorB = Math.floor((Math.random() * 256));
+     	if ($( this ).hasClass( "animated" )) {
+     		$(this).css("border-radius", "0");
+     		$(this).css("width", "0");
+     			$(this).css("height", "0");
+     			$(this).css("background", "transparent");
+     			$(this).css("border-bottom", "300px solid rgb(" + colorR + "," + colorG + "," + colorB + ")");
+     			$(this).css("border-left", "150px solid transparent");
+     			$(this).css("border-right", "150px solid transparent");
+
+     	} else {
+     		$(this).css("border-bottom", "0");
+     			$(this).css("border-left", "0");
+     			$(this).css("border-right", "0");
+     		$(this).css("border-radius", "50%");
+     		$(this).css("width", "300px");
+     			$(this).css("height", "300px");
+     			$(this).css("background", "blue");
+     	}
+		
+	});
+	$('*').on('click', function(event){
+		console.log(event);
+	});
+</script>
+</body>
+</html>

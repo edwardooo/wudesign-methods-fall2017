@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+	top: 40%;
+		margin: 0;
+    height: 100%;
+	}
+
+	div {
+		position: absolute;
+   		top: 20%; 
+   		left: 20%;                        /* 3 */
+		margin-left: auto;
+		margin-right: auto;
+		transition: 0.6s;
+	}
+	.triangle {
+	  width: 0;
+	  height: 0;
+	  border-left: 150px solid transparent;
+	  border-right: 150px solid transparent;
+	  border-bottom: 300px solid blue;
+	  transition: 0.6s;
+	}
+	.triangle:hover {
+		cursor: pointer;
+		top: 18%;
+	}
+	.animated{
+		-webkit-animation: spin 1s infinite linear;
+     animation: spin 1s infinite linear;
+     transition: 0.6s;
+	}
+
+	@keyframes  spin {
+		50% {-webkit-transform: scale(1.1);}
+    100% {-webkit-transform: rotate3d(0.45,0.45,0.45,360deg);}  
+}
+}
+</style>
+
+<body>
+
+<div class="triangle">
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		 $(this).toggleClass("animated");
+		 var colorR = Math.floor((Math.random() * 256));
+     	var colorG = Math.floor((Math.random() * 256));
+     	var colorB = Math.floor((Math.random() * 256));
+     	if ($( this ).hasClass( "animated" )) {
+     			$(this).css("border-bottom", "300px solid rgb(" + colorR + "," + colorG + "," + colorB + ")");
+     	} else {
+     		$(this).css("border-bottom", "300px solid blue");
+     	}
+		
+	});
+	$('*').on('click', function(event){
+		console.log(event);
+	});
+</script>
+</body>
+</html>

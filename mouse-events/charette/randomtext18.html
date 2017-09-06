@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+    left: 3%;
+	}
+
+	div {
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+
+	}
+
+	.rotating {
+		-webkit-animation: rotato 1s infinite; /* Safari 4.0 - 8.0 */
+    animation: rotato 1s infinite linear;
+    transition: 0.6s;
+	}
+
+	@keyframes rotato {
+	  50% {
+    transform: scale(3);
+	  }
+	}
+}
+</style>
+<body>
+<div class="default">
+	One time last summer my then girlfriend saw me talk to another girl and hug her as we said goodbye. <br> She got angry at me and said; "you're not allowed to hug other girls - it's not gonna fly." <br>
+So I picked her up and said "no, but you will," and threw her sky high.
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var size = Math.floor(10+ Math.random() * 20);
+		 var colorR = Math.floor((Math.random() * 256));
+	     	var colorG = Math.floor((Math.random() * 256));
+	     	var colorB = Math.floor((Math.random() * 256));
+
+		 $(this).css('color', "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		 $(this).css('font-size', 24);
+		 $(this).toggleClass("rotating");
+	});
+</script>
+</body>
+</html>

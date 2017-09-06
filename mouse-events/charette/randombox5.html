@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    text-align: center;
+	}
+	div {
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		margin-left: 10%;
+		margin-top: 10%;
+		margin-right: auto;
+		 position: absolute;
+		 vertical-align: middle
+
+	}
+	.default{
+		width: 70px;
+    height: 50px;
+    background: red;
+    cursor: pointer;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+
+	}
+
+	.rotating {
+		-webkit-animation: rotato 1s infinite; /* Safari 4.0 - 8.0 */
+    animation: rotato 1s infinite linear;
+    transition: 0.6s;
+	}
+
+	@keyframes rotato {
+	  100% {
+    transform: skewY(360deg);
+	  }
+	}
+}
+</style>
+<body>
+<div class="default">
+	
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var leng = Math.floor(10+ Math.random() * 500);
+		var widt = Math.floor(10+ Math.random() * 500);
+		 $( this ).width( widt ).addClass( "morph" );
+		 $( this ).height( leng ).addClass( "morph" );
+		console.log("hello");
+		$(this).toggleClass("rotating");
+		var colorR = Math.floor((Math.random() * 256));
+     	var colorG = Math.floor((Math.random() * 256));
+     	var colorB = Math.floor((Math.random() * 256));
+		$(this).css("background-color", "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+	});
+</script>
+</body>
+</html>

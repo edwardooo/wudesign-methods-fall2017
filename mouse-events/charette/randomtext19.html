@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+    left: 10%;
+	}
+
+	div {
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+
+	}
+
+	.rotating {
+		-webkit-animation: rotato 1s infinite; /* Safari 4.0 - 8.0 */
+    animation: rotato 1s infinite linear;
+    transition: 0.6s;
+	}
+
+	@keyframes rotato {
+	  50% {
+    transform: scale(3);
+	  }
+	}
+}
+</style>
+<body>
+<div class="default">
+	whut are u listennnnning 22
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var size = Math.floor(10+ Math.random() * 20);
+		 var colorR = Math.floor((Math.random() * 256));
+	     	var colorG = Math.floor((Math.random() * 256));
+	     	var colorB = Math.floor((Math.random() * 256));
+	var quotes = new Array("SMOKEPURPP", "LIL XAN", "SKI MASK THE SLUMP GOD", "MATT OX", "YUNG LEAN", "LIL PUMP", "OLIVER FRANCIS"),
+    randno = quotes[Math.floor( Math.random() * quotes.length )];
+    if ($( this ).hasClass( "rotating" )) {
+	     		 
+	     		 $(this).text( "what are u listening" );
+	     		 $(this).toggleClass("rotating");
+	     		 $(this).css('font-size', 16);
+	     		 $(this).css('color', "black");
+	     		// $(this).text( what are u listening );
+
+	     	} else {
+	     		 $(this).text( randno );
+		 $(this).css('font-size', 64);
+		 $(this).css('color', "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		 $(this).toggleClass("rotating");
+
+
+	     	}
+   
+	});
+</script>
+</body>
+</html>
