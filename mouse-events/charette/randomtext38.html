@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+    left: 3%;
+	}
+
+	div {
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+	}
+	.chubbybaby {  direction: rtl;
+    unicode-bidi: bidi-override; }
+}
+</style>
+<body>
+<div class="default">
+	lets make a bunch of lil friends :) <br>
+	(opens lots of windows, proceed with caution)<br>
+	(wont work if u have popup blocks)
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var size = Math.floor(10+ Math.random() * 20);
+		 var colorR = Math.floor((Math.random() * 256));
+	     	var colorG = Math.floor((Math.random() * 256));
+	     	var colorB = Math.floor((Math.random() * 256));
+	     	var txt = navigator.userAgent;
+		 $(this).css('color', "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		 $(this).css('font-size', size);
+		 var myWindow = window.open("", "friend", "width=200,height=100");
+    myWindow.document.write("<p> hai :) </p>");
+    var myWindow2 = window.open("", "friend2", "width=200,height=100");
+    myWindow2.document.write("<p> whatcha doin?? </p>");
+    var myWindow3 = window.open("", "friend3", "width=200,height=100");
+    myWindow3.document.write("<p> are you thinking about me? </p>");
+    var myWindow4 = window.open("", "friend4", "width=200,height=100");
+    myWindow4.document.write("<p> are you busy? </p>");
+    var myWindow5 = window.open("", "friend5", "width=200,height=100");
+    myWindow5.document.write("<p> i hppe u dont think im annoying.. :( </p>");
+
+
+	});
+</script>
+</body>
+</html>

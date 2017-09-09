@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		margin: 0;
+    height: 100%;
+    position: relative;
+    font-family: arial;
+    font-weight: bold;
+    left: 3%;
+    top: 3%;
+	}
+
+	div {
+		 position: absolute;               /* 2 */
+   		top: 10%;                         /* 3 */
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.default{
+		font-family: arial;
+    cursor: pointer;
+    transition: 0.3s;
+	}
+	.morph{
+		background: blue;
+    	cursor: pointer;
+    	transition: 0.2s;
+	}
+	.chubbybaby {  direction: rtl;
+    unicode-bidi: bidi-override; }
+}
+</style>
+<body>
+<div class="default">
+	let me count to 3 in a 1 second interval. ready?
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+	$( "div" ).click(function() {
+		var size = Math.floor(10+ Math.random() * 20);
+		 var colorR = Math.floor((Math.random() * 256));
+	     	var colorG = Math.floor((Math.random() * 256));
+	     	var colorB = Math.floor((Math.random() * 256));
+	     	var txt = navigator.userAgent;
+		 $(this).css('color', "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		 $(this).css('font-size', 32);
+		 setTimeout(myTimeout1, 0000) 
+    setTimeout(myTimeout2, 1000) 
+    setTimeout(myTimeout3, 2000) 
+    setTimeout(myTimeout4, 3000) 
+	});
+
+	function myTimeout1() {
+		$("div").text("1 second");
+}
+function myTimeout2() {
+   $("div").text("2 seconds");
+}
+function myTimeout3() {
+    $("div").text("3 seconds");
+}
+function myTimeout4() {
+    $("div").text("thats all for now.");
+}
+
+	function myFunction() {
+		var x = document.getElementById("myPsw").value;
+    alert("hahaha... now i know tht ur password is " + x + " >:)");
+}
+</script>
+</body>
+</html>
