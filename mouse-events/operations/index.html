@@ -49,6 +49,25 @@ html,body {
     transition: 0.6s;
 	}
 
+	#block {
+	position: relative;
+	transition: 0.2s;
+	color: darkgrey;
+	font-weight: normal;
+	line-height: 120%;
+	}
+
+	#block2 {
+	line-height: 120%;
+	transition: 0.2s;
+	}
+
+	#block:hover {
+	cursor: pointer;
+	margin-left: 10px;
+	color:black; 
+	}
+
 	@keyframes rotato {
 	  50% {
     transform: scale(3);
@@ -62,7 +81,7 @@ html,body {
 </div>
 <br>
 <div class="subtitle">
-	<i> Generate SOme 🔥🔥🔥</i> <button type="button" id="myBtn" onclick="letsGenerate()">> Try it</button>
+	<i> Generate SOme 🔥🔥🔥</i> <button type="button" id="myBtn" onclick="letsGenerate()">> spit this verse, yo</button>
 </div>
 
 <div class="lyrics">
@@ -76,9 +95,13 @@ html,body {
   crossorigin="anonymous"></script>
   <script>
 
+  function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-function letsGenerate() {
-	var vanity1 = new Array("Rick Owens", "Margielas", "Gold chains", "Supreme", "Million dollars", "Raf Simons", "Gucci", "Hundred", 
+$(document).ready(function() {
+$(document).on('click', "#block", async function() {
+    var vanity1 = new Array("Rick Owens", "Margielas", "Gold chains", "Supreme", "Million dollars", "Raf Simons", "Gucci", "Hundred", 
 			"Bentley", "Rolls Royce", "Glocks", "Purple drink"),
 			vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
 		var connect1 = new Array("inside my", "on my", "up my", "around my", "down my", "is my"),
@@ -95,26 +118,104 @@ function letsGenerate() {
 		var adlib = new Array("yuh", "ayy", "skrrr", "ooh", "yaa", "huh?", "what?", "nah"),
 			adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
 
+		this.innerHTML = "<br />" + vanity1Word + ' ' + connect1Word + ' ' + meself1Word ;
+		var vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
+        var connect1Word = connect1[Math.floor( Math.random() * connect1.length )];
+    	var meself1Word = meself1[Math.floor( Math.random() * meself1.length )];
+		this.innerHTML += "<br />" + vanity1Word + ' ' + connect1Word + ' ' + meself1Word ;
+		this.innerHTML += "<br />" + meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' ;
+		var adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
+		this.innerHTML += "<br />" + meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' ;
 
-    $( "<p id='lineA'>   </p>" ).clone().appendTo( ".lyrics" );
-    $( "#lineA" ).text( vanity1Word + ' ' + connect1Word + ' ' + meself1Word );
+});
+});
 
-    var vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
-    var connect1Word = connect1[Math.floor( Math.random() * connect1.length )];
-    var meself1Word = meself1[Math.floor( Math.random() * meself1.length )];
-    $( "<p id='lineB'>   </p>" ).clone().appendTo( ".lyrics" );
-    $( "#lineB" ).text( vanity1Word + ' ' + connect1Word + ' ' + meself1Word );
+async function letsGenerate() {
+	var vanity1 = new Array("Rick Owens", "Margielas", "Gold chains", "Supreme", "Million dollars", "Raf Simons", "Gucci", "Hundred", 
+			"Bentley", "Rolls Royce", "Glocks", "Purple drink"),
+			vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
+		var connect1 = new Array("inside my", "on my", "up my", "around my", "down my", "glow my"),
+			connect1Word = connect1[Math.floor( Math.random() * connect1.length )];
+		var meself1 = new Array("chest", "waist", "crib", "wrist", "pockets", "neck", "face", "lungs", "hands", "pipe"),
+			meself1Word = meself1[Math.floor( Math.random() * meself1.length )];
 
-     $( "<p id='lineC'>   </p>" ).clone().appendTo( ".lyrics" );
-    $( "#lineC" ).text( meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' );
+		var meself2 = new Array("I don't have no", "We don't see the", "Got my favorite", "Shoutout to my", "I'm in love with", "That girl on my", "I can't feel the", "I think they like my", "They been talking bout my", "Been working on my", "Getting all the"),
+			meself2Word = meself2[Math.floor( Math.random() * meself2.length )];
+		var vanity2 = new Array("hype", "thots", "diamonds", "sprite", "dracos", "bando", "lick", "dash", 
+			"dope", "bricks", "gang", "clout"),
+			vanity2Word = vanity2[Math.floor( Math.random() * vanity2.length )];
 
-    var adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
-     $( "<p id='lineD'>   </p>" ).clone().appendTo( ".lyrics" );
-     vanity1Word.appendChild(connect1Word);
-    $( "#lineD" ).text( meself2Word + ' ' + vanity2Word + ' (' + adlibWord + ')' );
+		var adlib = new Array("yuh", "ayy", "skrrr", "ooh", "yaa", "huh?", "what?", "nah"),
+			adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
+
+		var verse  = document.createElement('div');
+		verse.id = 'block';
+		verse.classname = 'block';
+
+		var line1 = document.createElement('div');
+		line1.id = 'block2';
+
+
+		var line2 = document.createElement('div');
+		line2.id = 'block2';
+
+		var line3 = document.createElement('div');
+		line3.id = 'block2';
+
+		var line4 = document.createElement('div');
+		line4.id = 'block2';
+
+		document.getElementsByTagName('body')[0].appendChild(verse);
+
+		line1.innerHTML = "<br />" + vanity1Word + ' ' + connect1Word + ' ' + meself1Word ;
+		var vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
+        var connect1Word = connect1[Math.floor( Math.random() * connect1.length )];
+    	var meself1Word = meself1[Math.floor( Math.random() * meself1.length )];
+		line2.innerHTML = vanity1Word + ' ' + connect1Word + ' ' + meself1Word ;
+		line3.innerHTML = meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' ;
+		var adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
+		line4.innerHTML = meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' ;
+		
+		verse.appendChild(line1);
+		verse.appendChild(line2);
+		verse.appendChild(line3);
+		verse.appendChild(line4);
+
+		$( line1 ).hide();
+		$( line2 ).hide();
+		$( line3 ).hide();
+		$( line4 ).hide();
+
+		$( line1 ).show();
+				await sleep(500);
+					$( line2 ).show();
+				await sleep(500);
+					$( line3 ).show();
+				await sleep(500);
+					$( line4 ).show();
+
+
+
+    // $( "#block2" ).text( vanity1Word + ' ' + connect1Word + ' ' + meself1Word );
+
+    // var vanity1Word = vanity1[Math.floor( Math.random() * vanity1.length )];
+    // var connect1Word = connect1[Math.floor( Math.random() * connect1.length )];
+    // var meself1Word = meself1[Math.floor( Math.random() * meself1.length )];
+    // $( "<p id='lineB'>   </p>" ).clone().appendTo( ".lyrics" );
+    // $( "#lineB" ).text( vanity1Word + ' ' + connect1Word + ' ' + meself1Word );
+
+    //  $( "<p id='lineC'>   </p>" ).clone().appendTo( ".lyrics" );
+    // $( "#lineC" ).text( meself2Word + ' ' + vanity2Word+ ' (' + adlibWord + ')' );
+
+    // var adlibWord = adlib[Math.floor( Math.random() * adlib.length )];
+    //  $( "<p id='lineD'>   </p>" ).clone().appendTo( ".lyrics" );
+    //  vanity1Word.appendChild(connect1Word);
+    // $( "#lineD" ).text( meself2Word + ' ' + vanity2Word + ' (' + adlibWord + ')' );
 
 
 }
+
+
 
 function letsGenerateMore() {
 	$(this).append(".lyrics")
@@ -122,20 +223,7 @@ function letsGenerateMore() {
 }
 
 
-	$( "div" ).click(function() {
-		var size = Math.floor(10+ Math.random() * 20);
-		 var colorR = Math.floor((Math.random() * 256));
-	     	var colorG = Math.floor((Math.random() * 256));
-	     	var colorB = Math.floor((Math.random() * 256));
 
-		
-
-		
-
-
-   
-   
-	});
 </script>
 </body>
 </html>
