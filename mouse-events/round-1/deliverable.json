@@ -1,0 +1,18 @@
+{
+	"entrypoints" : [
+		{
+			"name" : "1",
+			"file" : "ex1.html"
+		},
+		{
+			"name" : "this one straight up doesnt work",
+			"file" : "ex2.html"
+		},
+		{
+			"name" : "3",
+			"file" : "ex3.html"
+		}
+		
+
+	]
+}

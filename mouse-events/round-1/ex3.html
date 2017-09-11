@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html,body {
+		 display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+	}
+
+/*	div {
+		 position: absolute;               
+   		top: 10%;                         
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}*/
+#boxes{
+  width:80%;
+  margin:auto;
+  text-align: center;
+}
+
+
+.box{
+  position: relative;
+  width:100px;
+  height: 100px;
+  margin:4px;
+  display:inline-block;
+}
+
+.red{background-color:red}
+.blue{background-color:blue}
+.green{background-color:green}
+.yellow{background-color:yellow}
+}
+</style>
+<body>
+<div id="boxes">
+
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+    <div class="box yellow"></div>
+  </div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+
+  <script>
+var redanim = anime({
+  targets: 'div.red',
+  translateY: [
+    { value: 200, duration: 500 },
+    { value: 0, duration: 800 }
+  ],
+  rotate:{
+    value: '1turn',
+    easing: 'easeInOutSine'
+  },
+  delay: function(el, i, l){ return i * 1000},
+  autoplay:false,
+  loop:true
+});
+
+var blueanim = anime({
+  targets: 'div.blue',
+  translateY: [
+    { value: 200, duration: 500 },
+    { value: 0, duration: 800 }
+  ],
+  rotate:{
+    value: '1turn',
+    easing: 'easeInOutSine'
+  },
+  delay: function(el, i, l){ return i * 1000},
+  autoplay:false,
+  loop:true
+});
+
+var greenanim = anime({
+  targets: 'div.green',
+  translateY: [
+    { value: 200, duration: 500 },
+    { value: 0, duration: 800 }
+  ],
+  rotate:{
+    value: '1turn',
+    easing: 'easeInOutSine'
+  },
+  delay: function(el, i, l){ return i * 1000},
+  autoplay:false,
+  loop:true
+});
+
+var yellowanim = anime({
+  targets: 'div.yellow',
+  translateY: [
+    { value: 200, duration: 500 },
+    { value: 0, duration: 800 }
+  ],
+  rotate:{
+    value: '1turn',
+    easing: 'easeInOutSine'
+  },
+  delay: function(el, i, l){ return i * 1000},
+  autoplay:false,
+  loop:true
+});
+document.querySelector('.red').onclick = redanim.play;
+document.querySelector('.yellow').onclick = yellowanim.play;
+document.querySelector('.blue').onclick = blueanim.play;
+document.querySelector('.green').onclick = greenanim.play;
+
+
+
+
+// var lineDrawing = anime({
+//   targets: '#lineDrawing .lines path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 250 },
+//   direction: 'alternate',
+//   loop: false,
+//   autoplay: false
+// });
+
+// var lineDrawing2 = anime({
+//   targets: '#lineDrawing2 .lines2 path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 350 },
+//   direction: 'alternate',
+//   loop: true,
+//   autoplay: false
+// });
+
+
+
+
+
+</script>
+</body>
+</html>
