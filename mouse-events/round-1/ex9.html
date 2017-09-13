@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+body {
+
+   position: relative;
+   transition: 1s;
+   font-family: arial;
+   font-weight: thick;
+   font-size: 72pt;
+   color: white;
+
+	}
+
+
+
+/*	div {
+		 position: absolute;               
+   		top: 10%;                         
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}*/
+/*#boxes{
+  width:80%;
+  margin:auto;
+  text-align: center;
+}
+
+
+.box{
+  position: relative;
+  width:100px;
+  height: 100px;
+  margin:4px;
+  display:inline-block;
+}
+
+.red{background-color:red}
+.blue{background-color:blue}
+.green{background-color:green}
+.yellow{background-color:yellow}
+}*/
+
+
+
+.politician {
+
+ background-image: url("corzine.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  background-size: contain;
+}
+
+.image-wrapper {
+
+   	position: absolute;
+	transform: translate(-50%, -50%);
+    opacity: 1;
+    width:1px;
+  height: 1px;
+/*  background-color:white;*/
+  border-radius: 50%;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-wrapper .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+</style>
+
+
+<div class="politician"> 
+<!-- <img src="corzine.png" alt="NOooooOOoo!!!!!" /> -->
+<br>
+<br><br><br><br><br><br>
+</div>
+<body>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+
+  <script>
+
+
+$( document).click(function() {
+		
+		 var colorR = Math.floor((Math.random() * 256));
+     	var colorG = Math.floor((Math.random() * 256));
+     	var colorB = Math.floor((Math.random() * 256));
+		 $("body").css('background-color', "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+		
+	});
+
+ $(".politician").click(function(e){
+
+ 		var fadeDelay = 800;
+    	var fadeDuration = 800;
+ 		
+ 		var me = Math.round(Math.random()*1000000);
+        var ayy = $('<div class="image-wrapper ' +me+'">')
+            .css({
+                "left": e.pageX + 'px',
+                "top": e.pageY + 'px'
+            })
+            .append($('<img src="" alt="NOooooOOoo!!!!!" />'))
+            .appendTo(document.body);
+
+        
+
+        // var els = document.querySelectorAll('.image-wrapper');
+        // els.className += " " + me;
+
+             setTimeout(function() {
+            ayy.addClass('fade-out');           
+            setTimeout(function() { ayy.remove(); }, fadeDuration);
+        }, fadeDelay);
+
+             var size= anime.random(100,150);
+
+            anime({
+				  targets: '.image-wrapper ',
+
+				  height: {
+					    value: size,
+					    duration: anime.random(200, 400),
+					    
+					    easing: 'easeOutElastic'
+					  },
+
+				width: {
+					    value: size,
+					    duration: anime.random(200, 400),
+					    
+					    easing: 'easeOutElastic'
+					  },
+				  opacity:0,
+				  elasticity: 999,
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeOutElastic',
+				  duration: anime.random(50, 100),
+
+				  
+				  autoplay:true,
+				  loop:false
+				})
+
+            anime({
+				  targets: '.politician ',
+				   scale: [
+				   	{ value: anime.random(0.7, 0.5), duration: 0, easing: 'easeOutElastic', },
+				    { value: 1, duration: 400, easing: 'easeOutElastic', } ],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeInOutSine',
+				  duration: anime.random(200, 600),
+				  offset: 100,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+
+});
+
+			anime({
+				  targets: '.fade-out ',
+				  width:0,
+				  height:0 ,
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeInOutSine',
+				  duration: anime.random(200, 600),
+				  offset: 100,
+				  autoplay:true,
+				  loop:false
+				})
+
+
+// var lineDrawing = anime({
+//   targets: '#lineDrawing .lines path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 250 },
+//   direction: 'alternate',
+//   loop: false,
+//   autoplay: false
+// });
+
+// var lineDrawing2 = anime({
+//   targets: '#lineDrawing2 .lines2 path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 350 },
+//   direction: 'alternate',
+//   loop: true,
+//   autoplay: false
+// });
+
+
+
+
+
+</script>
+</body>
+</html>
