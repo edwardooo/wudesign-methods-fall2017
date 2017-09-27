@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+html {
+	    cursor: none;
+	    overflow:hidden;
+
+}
+body {
+cursor: none;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 0;
+	font-family: 'arial';
+    font-weight: 300;
+	font-size: 32pt;
+	max-width: 1980px;
+    min-width: 800px;
+	line-height: 1.5em;
+	color:white;
+    min-height: 500px;
+/*    background-image: url("background.jpg") ;*/
+    background-attachment: fixed;
+    background-size:cover;
+
+	}
+
+
+
+/*	div {
+		 position: absolute;               
+   		top: 10%;                         
+		font-family: arial;
+		margin-left: auto;
+		margin-right: auto;
+	}*/
+/*#boxes{
+  width:80%;
+  margin:auto;
+  text-align: center;
+}
+
+
+.box{
+  position: relative;
+  width:100px;
+  height: 100px;
+  margin:4px;
+  display:inline-block;
+}
+
+.red{background-color:red}
+.blue{background-color:blue}
+.green{background-color:green}
+.yellow{background-color:yellow}
+}*/
+
+
+
+.politicianUpperbody {
+
+ position: relative;
+    background-position: center;
+    background-size: cover; 
+  
+}
+
+.pface {
+ position: fixed;
+   bottom: 32%;
+   left: 50%;
+   width: 500px;
+   height: 600px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+cursor: none;
+}
+
+.pbody {
+ position: fixed;
+   top: 70%;
+   left: 50%;
+   width: 500px;
+   height: 700px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+
+}
+
+.politicianLowerbody {
+
+ position:fixed;
+    bottom:-30%;
+    left:22%;
+    max-height: 200px;
+}
+
+.dialogue {
+
+
+ position:fixed;
+     top: 30%;
+    left:10%;
+    max-height: 200px;
+    display: none;
+     text-align: center;
+     border-radius: 100px;
+     background-color: lightgrey;
+     padding: 20px 50px ;
+     -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+  -webkit-animation: hue 1.5s infinite cubic-bezier(0.420, 0.000, 0.580, 1.000);
+   background-image: -webkit-linear-gradient(92deg,transparent,rgba(192,192,192,0.6));
+
+
+}
+
+.intro {
+
+
+ position:fixed;
+     bottom: -45%;
+    left:50%;
+    max-height: 200px;
+    max-width: 1000px;
+     line-height: 38pt;
+     border-radius: 150px;
+     background-color: rgba(22, 22, 22, 0.9);
+     padding: 40px 60px ;
+     -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+ margin-top: -250px; /* Half the height */
+   margin-left: -550px; /* Half the width */
+   font-size: 24pt;
+   display: none;
+   text-align: center;
+
+
+}
+
+.image-wrapper {
+
+   	position: absolute;
+	transform: translate(-50%, -50%);
+    opacity: 1;
+    width:1px;
+  height: 1px;
+/*  background-color:white;*/
+  border-radius: 50%;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-wrapper .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.cursor {
+  position: absolute;
+   -webkit-filter: drop-shadow(15px 12px 3px rgba(0,0,0,0.3));
+  pointer-events:none;
+}
+
+.btn1 {
+ position: fixed;
+  max-width: 150px;
+ 	top: 40%;
+   right:5%;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   opacity: 0.5;
+   transition: 0.5s;
+
+}
+
+.btn2 {
+ position: fixed;
+ max-width: 150px;
+ 	top: 65%;
+   right:5%;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   opacity: 0.5;
+   transition: 0.5s;
+}
+
+.btn3 {
+ position: fixed;
+  max-width: 150px;
+ 	top: 95%;
+   right:5%;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   opacity: 0.5;
+   transition: 0.5s;
+}
+
+.btn1:hover {
+opacity: 1;
+animation: freak 1s infinite;
+}
+
+.btn2:hover {
+opacity: 1;
+animation: freak 1s infinite;
+}
+
+.btn3:hover {
+opacity: 1;
+animation: freak 1s infinite;
+}
+
+.scoreboard {
+ position: fixed;
+ max-width: 400px;
+ max-height: 200px;
+ 	top: 35%;
+   left:20%;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   opacity: 1;
+   transition: 0.5s;
+   color: black;
+   pointer-events:none;
+}
+
+.titlebub {
+ position:fixed;
+     bottom: -70%;
+    left:50%;
+    max-height: 600px;
+    max-width: 1000px;
+     line-height: 130pt;
+     border-radius: 100px;
+/*     background-color: #ed213f;*/
+     padding: 20px 50px ;
+/*     -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);*/
+ margin-top: -250px; /* Half the height */
+   margin-left: -550px; /* Half the width */
+   font-size: 130pt;
+   font-weight: 900;
+   display: none;
+   text-align: center;
+   letter-spacing: 5px;
+   color:#ed213f;
+   -webkit-animation: hue 1s infinite cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    background-image: -webkit-linear-gradient(92deg,#ea410e,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cleared {
+ position:fixed;
+     bottom: -70%;
+    left:50%;
+    max-height: 600px;
+    max-width: 1000px;
+     line-height: 130pt;
+     border-radius: 100px;
+/*     background-color: #ed213f;*/
+     padding: 20px 50px ;
+/*     -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);*/
+ margin-top: -250px; /* Half the height */
+   margin-left: -550px; /* Half the width */
+   font-size: 90pt;
+   font-weight: 900;
+   display: none;
+   text-align: left;
+   letter-spacing: 0px;
+   color:#ed213f;
+   -webkit-animation: hue 1s infinite cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    background-image: -webkit-linear-gradient(92deg,#ea410e,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+img {
+	cursor: none;
+}
+
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    
+    to {
+      -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes freak {
+    0% { transform: rotate(-30deg); 
+                    -webkit-transform: scale(2);
+
+       }
+	50% {       -webkit-transform: scale(1.5);
+		transform: rotate(-10deg);
+
+}
+    100% { transform: rotate(-30deg); 
+                    -webkit-transform: scale(2);
+}
+}
+
+@keyframes pump {
+    0% { transform: scale(1); 
+       }
+	50% {transform: scale(1.2);
+		;
+
+}
+    100% { transform:scale(1);
+}
+}
+
+</style>
+<div class="scoreboard"></div>
+<div class="politicianUpperbody"><img src="corzinebody.png" class="pbody"/><img src="corzineface.png" class="pface"/></div>
+<!-- <img src="corzineupperbody.png" class="politicianUpperbody"/> -->
+<div class="dialogue"></div>
+
+<div class="intro">Hi, my name is <b>Jon Corzine</b>, former CEO of Goldman Sachs who served as the Governor of New Jersey until 2008! I reside in <b>Hoboken NJ</b>, and can be seen walking the streets of New York City! </div>
+<div class="titlebub">WHO IS JON CORZINE?</div>
+<div class="cleared">ASSASSINATED</div>
+<img src="cursors/knife.png" class="btn1" /><img src="cursors/tomahawk.png" class="btn2" /><img src="cursors/chainsaw.png" class="btn3" />
+<img src="cursors/hand.png" class="cursor" />
+<body>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/js/ion.sound.min.js"></script>
+
+  <script>
+
+   $( document ).ready(function() {
+   	    anime({
+				  targets: '.pface ',
+
+
+				   translateY: [
+				    { value: 0, duration: 500, easing: 'easeInOutSine' },
+				   	{ value: -20, duration: 200, easing: 'easeInOutSine' },
+				    { value: 0, duration: 200, easing: 'easeInOutSine' },
+				    { value: -20, duration: 200, easing: 'easeInOutSine' },
+				    { value: 0, duration: 200, easing: 'easeInOutSine' },
+				    { value: -20, duration: 200, easing: 'easeInOutSine' },
+				    { value: 0, duration: 200, easing: 'easeInOutSine' },
+				    { value: -20, duration: 200, easing: 'easeInOutSine' },
+				    { value: 0, duration: 200, easing: 'easeInOutSine' },
+				    { value: 5, duration: 500, easing: 'easeInOutSine' },
+				    ],
+				  easing: 'easeInOutSine',
+				  easing: 'easeInOutSine',
+				  duration: 2000,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+   	//        	    anime({
+				//   targets: '.pbody ',
+				//   	scale: [
+				//    	{ value: 1.2, duration: 0, easing: 'easeInOutSine', },,
+				//     { value: 1.2, duration: 2000, easing: 'easeInOutSine', } ,
+				//     	{ value: 1.2, duration: 0, easing: 'easeInOutSine', }],
+
+				//     	scaleX: [
+				//    	{ value: 1.2, duration: 0, easing: 'easeInOutSine', },
+				//     { value: 1.2, duration: 2000, easing: 'easeInOutSine', } ,
+				//     	{ value: 1.2, duration: 0, easing: 'easeInOutSine', }],
+
+				//    translateY: [
+				//    	{ value: 3000, duration: 0, easing: 'easeInOutSine' },
+				//     { value: 0, duration: 2000, easing: 'easeInOutSine' }],
+				//   easing: 'easeInOutSine',
+				//   easing: 'easeInOutSine',
+				//   duration: 2000,
+				//   offset: 0,
+				//   autoplay:true,
+				//   elasticity:666,
+				//   loop:false
+				// })
+
+   	$('.pface').attr("src","corzineface.png")
+ 		 	  setTimeout(function(){ $('.pface').attr("src","corzinefacelaugh.png")},200)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzineface.png")},600)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzinefacelaugh.png")},700)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzineface.png")},900)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzinefacelaugh.png")},1100)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzineface.png")},1400)
+ 		 	  // setTimeout(function(){ $('.pface').attr("src","corzinefacelaugh.png")},1600)
+ 		 	  setTimeout(function(){ $('.pface').attr("src","corzineface.png")},2600)
+
+   	// alert("For optimal experience, change your browser scale by holding  ⌘ and dragging your mouse until all elements are visible. Press  ⌘ + Ctrl + f to enter fullscreen. Enjoy");
+		ion.sound({
+		    sounds: [
+		        {name: "carnivalselect"},
+		         {name: "laugh"},
+		         {name: "dodge"},
+		         {name: "hit"},
+		         {name: "scream"},
+		         {name: "select"},
+		         {name: "bell"},
+		         {name: "code"},
+		    ],
+
+		    // main config
+		    path: "sounds/",
+		    preload: true,
+		    multiplay: true,
+		    volume: 0.6
+		});
+		ion.sound.play("laugh", {
+    volume: 0.8
+});
+		ion.sound.play("carnivalselect");
+
+
+
+   	anime({
+				  targets: '.scoreboard ',
+
+				  scale: [
+				   	{ value: 2, duration: 10,  },
+				    { value: 1, duration: 400, easing: 'easeInOutSine', },
+				    ],
+				  
+				  rotate: [
+				   	{ value: -60, duration: 10,  },
+				    { value: 30, duration: 200, easing: 'easeOutSine', },
+				    { value: 0, duration: 200, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 410,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+   	 
+
+   	 $(document).mousemove(function(e){
+    $('.cursor').css('left',e.pageX+"px");
+    $('.cursor').css('top',e.pageY+"px");
+    $('.pface').css('left',50.5 -  ((e.pageX -  $('.pface').offset().left)*0.8/document.body.scrollWidth)*6 +"%");
+    $('.pface').css('bottom',32- ((e.pageY - $('.pface').offset().bottom)*0.8/document.body.scrollHeight)*40 +"%");
+
+  });
+         anime({
+				  targets: '.pface ',
+				   // scale: [
+				   // 	{ value: anime.random(0.9, 1.1), duration: 2000, easing: 'easeInOutSine', },
+				   //  { value: 1, duration: 2000, easing: 'easeInOutSine', } ],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  rotate: [
+				   	{ value: 20, duration: 2000, easing: 'easeInOutElastic' },
+				    { value: -20, duration: 2000, easing: 'easeInOutElastic' },
+				     { value: 0, duration: 2000, easing: 'easeInOutElastic' } ],
+				   translateY: [
+				   	{ value: 5, duration: 1000, easing: 'easeInOutSine' },
+				    { value: -15, duration: 2000, easing: 'easeInOutSine' },
+				     { value: 0, duration: 500, easing: 'easeInOutSine' } ],
+				  easing: 'easeInOutSine',
+				  easing: 'easeInOutSine',
+				  duration: 4000,
+				  offset: 2700,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:true
+				})
+
+          anime({
+				  targets: '.pbody ',
+				   scale: [
+				   	{ value: 1.2, duration: 0, easing: 'easeInOutSine', },
+				   	{ value: 1.27, duration: 2000, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 2000, easing: 'easeInOutSine', } ,
+				    	{ value: 1.2, duration: 0, easing: 'easeInOutSine', }],
+
+				    	scaleX: [
+				   	{ value: 1.2, duration: 0, easing: 'easeInOutSine', },
+				   	{ value: 1.27, duration: 2000, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 2000, easing: 'easeInOutSine', } ,
+				    	{ value: 1.2, duration: 0, easing: 'easeInOutSine', }],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  translateY: [
+				   	{ value: 10, duration: 1000, easing: 'easeInOutSine' },
+				    { value: -10, duration: 2000, easing: 'easeInOutSine' },
+				     { value: 0, duration: 500, easing: 'easeInOutSine' } ],
+				  easing: 'easeInOutSine',
+				  duration: 6000,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:true
+				})
+
+           $('.intro').css( "display", "block" )
+
+           anime({
+				  targets: '.intro ',
+				  translateY: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: -500, duration: 2000, easing: 'easeOutElastic', },
+				     ],
+				    
+				  opacity: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: 1, duration: 2000, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 2000,
+				  offset: 6200,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+                    
+
+   	    $('.titlebub').css( "display", "flex" )
+
+           anime({
+				  targets: '.titlebub ',
+				  translateY: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: -900, duration: 2000, easing: 'easeOutElastic', },
+				    { value: -900, duration: 2000, easing: 'easeOutElastic', },
+				    { value: -3000, duration: 2000, easing: 'easeInOutSine', },
+				     ],
+
+				     scale: [
+				   	{ value: 1, duration: 0, easing: 'easeOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    
+				     ],
+				    
+				  opacity: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: 1, duration: 2000, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 6000,
+				  offset: 2700,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+           setTimeout(function(){ ion.sound.play("bell");},6600)
+          	
+    });
+
+
+
+
+  var weapon =0;
+ var health = 10;
+ var scoreNum = 0;
+   	$('.scoreboard').text("Score: " + scoreNum);
+
+ // $("html").click(function(e){ 
+ 	
+ // });
+ $(".btn1").click(function(e){
+ 	weapon =1;
+ 	$(".cursor").attr('src', 'cursors/knife.png');
+ 	ion.sound.play("select", {
+    volume: 0.8
+});
+ });
+
+ $(".btn2").click(function(e){
+ 	weapon = 2;
+ 	$(".cursor").attr('src', 'cursors/tomahawk.png');
+ 	 	ion.sound.play("select", {
+    volume: 0.8
+});
+ });
+
+ $(".btn3").click(function(e){
+ 	weapon= 3;
+ 	$(".cursor").attr('src', 'cursors/chainsaw.png');
+ 	 	ion.sound.play("select", {
+    volume: 0.8
+});
+ });
+
+ $(".pface").click(function(e){
+
+ 		 if (weapon < 1) {
+ 		 			ion.sound.play("dodge", {
+    volume: 0.8
+});
+ 		 	anime({
+				  targets: '.pface ',
+				   translateX: [
+				   	{ value: 50, duration: 200, easing: 'easeInOutSine', },
+				    { value: -50, duration: 200, easing: 'easeInOutSine', }, 
+				    { value: 0, duration: 200, easing: 'easeInOutSine', }
+				    ],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeInOutSine',
+				  duration: 600,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+ 		 	 anime({
+				  targets: '.cursor ',
+
+				  scale: [
+				   	{ value: 1.2, duration: 0,  },
+				    { value: 1, duration: 300, easing: 'easeOutSine', },
+				    ],
+				  
+				  rotate: [
+				   	{ value: -30, duration: 0,  },
+				    { value: 20, duration: 200, easing: 'easeOutSine', },
+				    { value: 0, duration: 100, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 200,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+ 		 	  $('.pface').attr("src","corzinefacesmug.png")
+ 		 	  setTimeout(function(){ $('.pface').attr("src","corzineface.png")},500)
+			    
+			} else {
+
+			
+
+
+ 		health= health-1;
+ 		scoreNum= scoreNum+60606;
+ 		$('.scoreboard').text("Score: " + scoreNum);
+
+ 		var fadeDelay = 0;
+    	var fadeDuration = 800;
+ 		
+ 		var me = Math.round(Math.random()*1000000);
+        // var ayy = $('<div class="image-wrapper ' +me+'">')
+        //     .css({
+        //         "left": e.pageX -300 + 'px',
+        //         "top": e.pageY-300 + 'px'
+        //     })
+        //     // .append($('<img src="http://pngimg.com/uploads/blood/blood_PNG6088.png" alt="NOooooOOoo!!!!!" />'))
+        //     .appendTo(document.body);
+
+        
+
+        // var els = document.querySelectorAll('.image-wrapper');
+        // els.className += " " + me;
+
+    //          setTimeout(function() {
+          
+    //         setTimeout(function() { ayy.remove(); }, fadeDuration);
+    //     }, fadeDelay);
+
+    //          var size= anime.random(30,150);
+
+    //         anime({
+				//   targets: '.image-wrapper ',
+
+				//   height: {
+				// 	    value: size,
+				// 	    duration: anime.random(200, 400),
+					    
+				// 	    easing: 'easeOutElastic'
+				// 	  },
+
+				// width: {
+				// 	    value: size,
+				// 	    duration: anime.random(200, 400),
+					    
+				// 	    easing: 'easeOutElastic'
+				// 	  },
+				//   opacity:0,
+				//   elasticity: 999,
+				//   // rotate:{
+				//   //   value: '1turn',
+				//   //   easing: 'easeInOutSine'
+				//   // },
+				//   easing: 'easeOutElastic',
+				//   duration: anime.random(50, 100),
+
+				  
+				//   autoplay:true,
+				//   loop:false
+				// })
+
+				$('.intro').css( "display", "none" )
+
+		ion.sound.play("hit", {
+    volume: 0.8
+});
+
+            anime({
+				  targets: '.pface ',
+				   scale: [
+				   	{ value: anime.random(0.3, 0.5), duration: 0.1, easing: 'easeOutElastic', },
+				    { value: 1, duration: 800, easing: 'easeOutElastic', } ],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeInOutSine',
+				  duration: 800.1,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+				 anime({
+				  targets: '.cursor ',
+
+				  scale: [
+				   	{ value: 1, duration: 0,  },
+				   	{ value: 2, duration: 100,  },
+				    { value: 1, duration: 200, easing: 'easeOutSine', },
+				    ],
+				  
+				  rotate: [
+				   	{ value: 40, duration: 0,  },
+				    { value: -50, duration: 100, easing: 'easeOutSine', },
+				    { value: 0, duration: 200, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 300,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+				  anime({
+				  targets: '.scoreboard ',
+
+				  scale: [
+				   	{ value: 2, duration: 10,  },
+				    { value: 1, duration: 400, easing: 'easeInOutSine', },
+				    ],
+				  
+				  rotate: [
+				   	{ value: -60, duration: 10,  },
+				    { value: 30, duration: 200, easing: 'easeOutSine', },
+				    { value: 0, duration: 200, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 410,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+             var txtarray = new Array("Don't do it!", "Stop!", "Be a good boy! ", "Don't kill me!", "It hurts!", "I'll put you in jail!"),
+			randomtxt = txtarray[Math.floor( Math.random() * txtarray.length )];
+
+			 var xposarray = new Array(10, 70),
+			xpos = xposarray[Math.floor( Math.random() * xposarray.length )];
+
+             $('.dialogue').text(randomtxt)
+
+              $('.dialogue').css( "display", "flex" )
+              $('.dialogue').css( "left", xpos+"%" )
+
+              var colorR = Math.floor((Math.random() * 256));
+	     	var colorG = Math.floor((Math.random() * 256));
+	     	var colorB = Math.floor((Math.random() * 256));
+              $('.dialogue').css('background-color', "rgb(" + colorR + "," + colorG + "," + colorB + ")")
+
+               // setTimeout(function(){  $('.dialogue').css( "display", "none" )},800)
+
+             anime({
+				  targets: '.dialogue ',
+				  translateY: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: -100, duration: 500, easing: 'easeOutElastic', },
+				    { value: 0, duration: 300, easing: 'easeOutSine', } ],
+				     translateX: [
+				   	{ value: 0, duration: 200, easing: 'easeOutSine', },
+				    { value: anime.random(-30, 30), duration: 400, easing: 'easeOutSine', },
+				    { value: 0, duration: 200, easing: 'easeOutSine', } ],
+				    scale: [
+				   	{ value: 0, duration: 0.1, easing: 'easeOutSine', },
+				    { value: 1.2, duration: 200, easing: 'easeOutSine', },
+				    { value: 1.2, duration: 200, easing: 'easeOutSine', },
+				    { value: 1, duration: 200, easing: 'easeOutSine', } ],
+				  opacity: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: 1, duration: 500, easing: 'easeOutSine', },
+				    { value: 0, duration: 300, easing: 'easeOutSine', } ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 800,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+
+            $('.pface').attr("src","corzinefacebeat.png")
+
+ 			 
+
+ 			 if (health < 5) {
+			    $('.pface').attr("src","corzinefacehurt.png")
+			} else {setTimeout(function(){ $('.pface').attr("src","corzineface.png")},800)
+
+			}
+
+			if (health<0) {
+				 $('.cleared').css( "display", "block" )
+
+           anime({
+				  targets: '.cleared ',
+				  translateY: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: -1200, duration: 2000, easing: 'easeOutElastic', },
+				    { value: -1200, duration: 2000, easing: 'easeOutElastic', },
+				    { value: -3000, duration: 2000, easing: 'easeInOutSine', },
+				     ],
+
+				     scale: [
+				   	{ value: 1, duration: 0, easing: 'easeOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    { value: 1.2, duration: 500, easing: 'easeInOutSine', },
+				     { value: 1, duration: 500, easing: 'easeInOutSine', },
+				    
+				     ],
+				    
+				  opacity: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: 1, duration: 2000, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 6000,
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+           		setTimeout(function(){ $('.intro').css( "display", "block" )},1500)
+				  
+				 $('.intro').text("You've just violently assassinated Jon Corzine; your IP address has been recorded and submitted to the FBI! You are now on the Red List and will be dragged out from your home / executed at the FEMA detention center at 4:00am upon the enforcement of Martial Law 😍")
+				 			ion.sound.play("scream", {
+    volume: 0.8
+});
+				 			setTimeout(function(){ ion.sound.play("code");},1500)
+
+				 			setTimeout(function(){  $('.intro').html("Just kidding... haha it's only a joke! haha. Do not assassinate Jon Corzine in real life. Don't do that, I would really hate to see that.<br> Inspired by <a href='https://youtu.be/iX7ujP5jk7s'> Millon Dollar Extreme</a> <br> 🎶: Carnival Select - No More Heroes 2 Soundtrack ")},5000)
+				anime({
+				  targets: '.pface ',
+				    translateY: [
+				   	
+				    { value: 1000, duration: 500, easing: 'easeOutSine', },
+				    { value: 1000, duration: 9999999999999999999, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+				  //   value: '1turn',
+				  //   easing: 'easeInOutSine'
+				  // },
+				  easing: 'easeInOutSine',
+				  
+				  offset: 0,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				})
+				  anime({
+				   targets: '.intro ',
+				  translateY: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: -500, duration: 2000, easing: 'easeOutElastic', },
+				     ],
+				    
+				  opacity: [
+				   	{ value: 0, duration: 0, easing: 'easeOutSine', },
+				    { value: 1, duration: 2000, easing: 'easeOutSine', },
+				    ],
+				  // rotate:{
+
+				  easing: 'easeOutElastic',
+				  duration: 2000,
+				  offset: 1500,
+				  autoplay:true,
+				  elasticity:666,
+				  loop:false
+				    })
+
+			}
+
+}
+    
+
+
+});
+
+			// anime({
+			// 	  targets: '.fade-out ',
+			// 	  width:0,
+			// 	  height:0 ,
+			// 	  // rotate:{
+			// 	  //   value: '1turn',
+			// 	  //   easing: 'easeInOutSine'
+			// 	  // },
+			// 	  easing: 'easeInOutSine',
+			// 	  duration: anime.random(200, 600),
+			// 	  offset: 100,
+			// 	  autoplay:true,
+			// 	  loop:false
+			// 	})
+
+
+// var lineDrawing = anime({
+//   targets: '#lineDrawing .lines path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 250 },
+//   direction: 'alternate',
+//   loop: false,
+//   autoplay: false
+// });
+
+// var lineDrawing2 = anime({
+//   targets: '#lineDrawing2 .lines2 path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 7000,
+//   delay: function(el, i) { return i * 350 },
+//   direction: 'alternate',
+//   loop: true,
+//   autoplay: false
+// });
+
+
+
+
+
+</script>
+</body>
+</html>
