@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+position: fixed;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+     outline: #00FF00 solid 0px;
+		width: 600px;
+	height: 600px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -300px;
+	 left: 50%;
+	 margin-top: 70px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+background: #feccb1; /* Old browsers */
+background: -moz-linear-gradient(top, #feccb1 0%, #f17432 50%, #ea5507 51%, #5d8ef7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #feccb1 0%,#f17432 50%,#ea5507 51%,#5d8ef7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #feccb1 0%,#f17432 50%,#ea5507 51%,#5d8ef7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#5d8ef7',GradientType=0 ); /* IE6-9 */
+}
+.bcgball2 {
+		width: 450px;
+	height: 450px;
+	background: blue;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -600px;
+	 left: 50%;
+	 margin-top: 100px;
+}
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('https://itcamefromblog.files.wordpress.com/2017/05/rb-tp-16.jpg')}
+</style>
+
+<!-- HTML -->
+<section id="slide-1" class="homeSlide">
+    <div class="bcg"
+    >
+             <br>
+
+<!--               <div class="bcgtext"
+        data-0="color[swing]:gray;font-size:36pt;"
+        data-600="color[swing]:red;font-size:72pt;"
+    >
+    	
+            <p> drop n roll</p>
+            </div> -->
+
+
+            </div>
+        </div>
+    </div>
+                                  <div class="bcgball"
+        data-0=" filter[swing]:hue-rotate(0deg) blur(1px) opacity(30%); outline-width:0px; outline-style:groove;"
+        data-1000=" filter[swing]: hue-rotate(180deg) blur(1px)opacity(30%); outline-width:250px;outline-style:dotted;"
+        data-2000=" filter[swing]: hue-rotate(360deg) blur(1px)opacity(30%); outline-width:500px;outline-style:double;"
+        data-3000=" filter[swing]: hue-rotate(360deg) blur(1px)opacity(30%); outline-width:750px;outline-style:inset;"
+        data-4000=" filter[swing]: hue-rotate(360deg) blur(1px)opacity(30%); outline-width:750px;outline-style:dashed;"
+    >
+    </div>
+</section>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script>
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+</script>
+</body>
+</html>

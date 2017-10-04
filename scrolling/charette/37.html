@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+position: fixed;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+
+	color:red;
+	position: fixed;
+	margin-left: -200px;
+	 left: 30%;
+	 margin-top: 200px;
+	 filter:grayscale(10%);
+	 font-size: 90pt;
+}
+.bcgball2 {
+	width: 400px;
+	color:white;
+	position: fixed;
+	margin-left: -200px;
+	 left: 60%;
+	 margin-top: 100px;
+	 font-size: 38pt;
+}
+.bcgball3 {
+		width: 400px;
+	height: 400px;
+	background: yellow;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -400px;
+	 left: 50%;
+	 margin-top: 100px;
+}
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('https://i.ytimg.com/vi/mQ9jyr4xZwg/maxresdefault.jpg')}
+</style>
+
+<!-- HTML -->
+<section id="slide-1" class="homeSlide">
+    <div class="bcg"
+        data-0="filter[swing]:hue-rotate(0deg)"
+        data-2500="filter[swing]:hue-rotate(0deg)"
+    >
+             <br>
+
+<!--               <div class="bcgtext"
+        data-0="color[swing]:gray;font-size:36pt;"
+        data-600="color[swing]:red;font-size:72pt;"
+    >
+    	
+            <p> drop n roll</p>
+            </div> -->
+
+
+            </div>
+        </div>
+    </div>
+<!--                                   <div class="bcgball"
+        data-0=" filter[swing]:blur(10px) opacity(100%) hue-rotate(0deg); transform[swing]: rotate3d(1,0,0,90deg) scale(1);"
+        data-1400=" filter[swing]:blur(0px)opacity(100%) hue-rotate(320deg);transform[swing]:rotate3d(1,0,0,0deg) scale(1.5);"
+        data-2800=" filter[swing]:blur(1px)opacity(100%) hue-rotate(320deg);transform[swing]:rotate3d(1,0,0,0deg) scale(1.5);"
+    ><img src="http://dawghousedesignstudio.com/wp-content/uploads/2009/08/13/old-photo.jpg"> </div> -->
+
+      <div class="bcgball2"
+        data-0=" filter[swing]:blur(10px) opacity(100%) hue-rotate(0deg); transform[swing]: rotate3d(0,0,0,90deg) scale(1);"
+        data-2800=" filter[swing]:blur(0px)opacity(100%) hue-rotate(320deg);transform[swing]:rotate3d(0.1,1,0,30deg) scale(1.5);"
+    >Thou art a little soul bearing about a corpse, as Epictetus used to say. </div>
+
+         <div class="bcgball2"
+        data-0=" filter[swing]:blur(10px) opacity(100%) hue-rotate(0deg); transform[swing]: translateY(0px) rotate3d(0,0,1,90deg) scale(1);"
+        data-1400=" filter[swing]:blur(0px)opacity(100%) hue-rotate(320deg);transform[swing]:translateY(250px) rotate3d(0.1,0,1,5deg) scale(0.5);"
+    >TThe unripe grape, the ripe bunch, the dried grape, all are changes, not into nothing, but into something which exists not yet.  </div>
+
+             <div class="bcgball2"
+        data-0=" filter[swing]:blur(10px) opacity(100%) hue-rotate(0deg); transform[swing]: translateX(0px) rotate3d(0,0,0,90deg) scale(1);"
+        data-2400=" filter[swing]:blur(0px)opacity(100%) hue-rotate(320deg);transform[swing]:translateX(-400px) rotate3d(1,0,0.1,15deg) scale(1.2);"
+    >Socrates used to call the opinions of the many by the name of Lamiae, bugbears to frighten children.  </div>
+
+             <div class="bcgball2"
+        data-0=" filter[swing]:blur(10px) opacity(100%) hue-rotate(0deg); transform[swing]: translateX(0px) rotate3d(0,0,0,90deg) scale(1);"
+        data-2000=" filter[swing]:blur(0px)opacity(100%) hue-rotate(320deg);transform[swing]:translateX(300px) rotate3d(1,0,0.1,-5deg) scale(2);"
+    >The dispute then, he said, is not about any common matter, but about being mad or not.  </div>
+
+</section>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script>
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+</script>
+</body>
+</html>

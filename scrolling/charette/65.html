@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+position: fixed;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+     outline: #00FF00 solid 0px;
+		width: 600px;
+	height: 600px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -300px;
+	 left: 30%;
+	 margin-top: 70px;
+     transition: 1s;
+     font-size: 72pt;
+     color:white;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+}
+.bcgball2 {
+		width: 450px;
+	height: 450px;
+	background: blue;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -600px;
+	 left: 50%;
+	 margin-top: 100px;
+}
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('https://i.pinimg.com/600x315/cc/17/c3/cc17c3feefb7f20afa1fda8177e90a81.jpg')}
+</style>
+
+<!-- HTML -->
+<section id="slide-1" class="homeSlide">
+    <div class="bcg"
+    >
+             <br>
+
+<!--               <div class="bcgtext"
+        data-0="color[swing]:gray;font-size:36pt;"
+        data-600="color[swing]:red;font-size:72pt;"
+    >
+    	
+            <p> drop n roll</p>
+            </div> -->
+
+
+            </div>
+        </div>
+    </div>
+                                  <div class="bcgball"
+        data-0="font-style: normal;"
+        data-1000="font-style: oblique;"
+         data-2000="font-style: italic;"
+    > Substance that comes from your medula, angels wings around it, jesus juice
+    </div>
+</section>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script>
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+</script>
+</body>
+</html>

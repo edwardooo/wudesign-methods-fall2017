@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+		width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	position: fixed;
+	margin-left: -400px;
+	 left: 50%;
+	 margin-top: -300px;
+}
+/* Slide 1 */
+
+</style>
+
+<!-- HTML -->
+<section id="slide-1" class="homeSlide">
+    <div class="bcg"
+        data-center="background-position[swing]: 50% 0px;"
+        data-top-bottom="background-position[swing]: 50% -100px;"
+        data-anchor-target="#slide-1"
+    >
+             <br>
+
+              <div class="bcgtext"
+        data-0="color[swing]:gray;font-size:36pt;"
+        data-600="color[swing]:red;font-size:72pt;"
+    >
+    	
+             let it drop
+            </div>
+                              <div class="bcgball"
+        data-0="color[swing]:gray;transform[bounce]:translateY(0px);font-size:36pt;"
+        data-1500="color[swing]:red;transform[bounce]:translateY(700px);font-size:72pt;"
+    >
+
+    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script>
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+</script>
+</body>
+</html>
