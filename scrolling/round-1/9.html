@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Open+Sans" rel="stylesheet">
+</head>
+<body>
+<style type="text/css">
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+
+}
+
+.hsContainer {
+        background-image: url("http://www.churchsermon.org/multimedia/title%20shot/Jesus%20offers%20everlasting%20life.gif");
+     background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    opacity: 1;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+position: fixed;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+     outline: #00FF00 solid 0px;
+		width: 600px;
+	height: 600px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -300px;
+	 left: 60%;
+     transition: 0.01s;
+     font-size: 72pt;
+     color:red;
+      border: 26px solid black;
+      bottom: 100px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+}
+
+.bcgball2 {
+		width: 450px;
+	height: 450px;
+	background: blue;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -600px;
+	 left: 50%;
+	 margin-top: 100px;
+}
+p {
+    margin:1px;
+    padding:1px;
+}
+
+.msg {
+    height: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    position: fixed;
+    margin-left: -300px;
+     left: 30%;
+     margin-top: 70px;
+     transition: 0.01s;
+     font-size: 72pt;
+     background-color:lightblue;
+     color: white;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+}
+
+.phone {
+
+    width: 600px;
+    left:50%;
+      margin: 100px auto;
+      margin-left: -300px;
+      position: fixed;
+  }
+
+.bubbleMe {
+  position: relative;
+  background: #0B93F6;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  float: right;
+  margin:0;
+  font-size: 22pt;
+  font-family:'Roboto', sans-serif;
+  max-width: 600px;
+  }
+
+  .bubbleYou {
+  position: relative;
+  background: #E5E5EA;
+  color: black;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  float: left;
+  margin:0;
+  font-size: 22pt;
+  font-family:'Roboto', sans-serif;
+  max-width: 600px;
+  }
+  .arrow {
+    border-color: #0B93F6;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip-path: inset(24px 34px 0 0);
+    height: 55px;
+    position: absolute;
+    left: 100%;
+    margin-left: -20px;
+    width: 70px;
+  }
+
+    .arrowU {
+    border-color: #E5E5EA;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip-path: inset(24px 0px 0px 34px);
+    height: 55px;
+    position: absolute;
+    left: 0%;
+    margin-left: -50px;
+    width: 70px;
+  }
+* {
+  box-sizing: border-box;
+}
+
+.typewriter h1 {
+    font-family: 'Roboto';
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 2s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.input {
+    display: flex;
+    bottom: 50px;
+    width: 600px;
+    position: fixed;
+    left: 50%;
+    margin-left: -300px;
+    background-color: white;
+    z-index: 999;
+    padding: 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 3px black;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+.space {
+    height: 100px;
+}
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('https://i.pinimg.com/600x315/cc/17/c3/cc17c3feefb7f20afa1fda8177e90a81.jpg')}
+
+.centerpic {
+    position: fixed;
+    width: 110%;
+    margin-left: -30px;
+
+    margin-top: -100px
+}
+
+
+.backpic {
+    position: fixed;
+    width: 110%;
+    margin-left: -30px;
+
+    margin-top: -100px
+}
+
+.innercloud {
+    position: fixed;
+    width: 1800px;
+    left: 50%;
+    margin-left: -900px;
+    top: 50%;
+    margin-top: -900px
+}
+
+.midcloud {
+    position: fixed;
+    width: 1800px;
+    left: 50%;
+    margin-left: -900px;
+        top: 50%;
+    margin-top: -900px
+}
+
+.outercloud {
+    position: fixed;
+    width: 1800px;
+    left: 50%;
+    margin-left: -900px;
+        top: 50%;
+    margin-top: -900px
+}
+
+.images{
+    width: 1000px;
+    left: 52%;
+    margin-left: -500px;
+        bottom:0%;
+    margin-top: -500px;
+     position: fixed;
+
+}
+
+.imagesB{
+    width: 1600px;
+left: 50%;
+    margin-left: -800px;
+        bottom:0%;
+    margin-top: -800px;
+     position: fixed;
+}
+</style>
+
+<!-- HTML -->
+<!-- 
+<div class="backpic" data-0=" filter[swing]:blur(0px);transform[quadratic]: translateY(0px);"
+        data-4000=" filter[swing]: blur(4px);transform[quadratic]: translateY(-500px)">
+<img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif"><img class="imagesB" src="http://www.labseries.com/_efb/agerescue/kr/www/images/gif/ball-medium.gif">
+</div>
+ -->
+
+
+<img class="imagesB" src="bg.jpg">
+ <div class="bcgball"  
+ data-0=" width:200px; height:1px;border-radius:50%; "
+        data-1000="width: 200px; height: 100px; border-radius:50%;"
+         data-2000=" width:200px; height:1px;border-radius:50%; "
+         data-3000="width: 200px; height: 100px; border-radius:50%;"
+         data-4000=" width:200px; height:1px;border-radius:50%; "
+         data-5000="width: 200px; height: 100px; border-radius:50%;">
+</div>
+
+<!--         class="centerpic" data-0=" filter[swing]:blur(1px);transform[quadratic]: translateY(1000px);"
+        data-2000=" filter[swing]: blur(0px);transform[quadratic]: translateY(-1500px);"
+        data-4000=" filter[swing]: blur(1px);transform[quadratic]: translateY(-4000px)" -->
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script>
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+</script>
+</body>
+</html>
