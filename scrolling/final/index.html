@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Open+Sans|Trocchi|Cutive+Mono" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+</head>
+<body>
+<style type="text/css">
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: arial;
+  image-rendering: crisp-edges;
+}
+
+html::-webkit-scrollbar { 
+/*    display: none; */
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+	height: 100%;
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1500px;
+    width: 100%;
+position: fixed;
+
+}
+
+.bcgtext {
+	width: 800px;
+    position: fixed;
+    color:white;
+  display: block;
+  left: 50%;
+margin-left: -400px;
+margin-top: 100px;
+transition: 0.2s;
+font-size: 48pt;
+font-weight: bold;
+}
+
+.bcgball {
+     outline: #00FF00 solid 0px;
+		width: 600px;
+	height: 600px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -300px;
+	 left: 30%;
+	 margin-top: 70px;
+     transition: 0.01s;
+     font-size: 72pt;
+     color:white;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+}
+
+.bcgball2 {
+		width: 450px;
+	height: 450px;
+	background: blue;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	position: fixed;
+	margin-left: -600px;
+	 left: 50%;
+	 margin-top: 100px;
+}
+p {
+    margin:1px;
+    padding:1px;
+}
+
+.msg {
+    height: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    position: fixed;
+    margin-left: -300px;
+     left: 30%;
+     margin-top: 70px;
+     transition: 0.01s;
+     font-size: 72pt;
+     background-color:lightblue;
+     color: white;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,5d8ef7+100 */
+}
+
+.phone {
+
+    width: 570px;
+    left:50%;
+      padding: 100px auto;
+      margin-left: -255px;
+      position: fixed;
+          -webkit-perspective: 150px; /* Chrome, Safari, Opera  */
+    perspective: 100px;
+    top: -790px;
+
+  }
+
+.bubbleMe {
+  position: relative;
+  background: #0B93F6;
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  float: right;
+  margin:0;
+  font-size: 22pt;
+  font-family:'Roboto', sans-serif;
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  }
+
+  .bubbleYou {
+  position: relative;
+  background: #E5E5EA;
+  color: black;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  float: left;
+  margin:0;
+  font-size: 22pt;
+  font-family:'Roboto', sans-serif;
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  }
+  .arrow {
+    border-color: #0B93F6;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip-path: inset(24px 34px 0 0);
+    height: 55px;
+    position: absolute;
+    left: 100%;
+    margin-left: -20px;
+    width: 70px;
+  }
+
+    .arrowU {
+    border-color: #E5E5EA;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip-path: inset(24px 0px 0px 34px);
+    height: 55px;
+    position: absolute;
+    left: 0%;
+    margin-left: -50px;
+    width: 70px;
+  }
+* {
+  box-sizing: border-box;
+}
+
+.date{
+  display: none;
+  width: 750px;
+  height: 50px;
+  position: fixed;
+  top: 480px;
+  left:0%;
+  margin-left:225px; 
+  color:grey;
+}
+
+.date2{
+  display: inline-flex;
+  width: 550px;
+  height: 50px;
+  position: fixed;
+  top: 910px;
+  left:0%;
+  margin-left:225px; 
+  color:grey;
+}
+
+#typewriter p {
+    font-family: 'Roboto';
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  font-size: 22pt;
+  margin-bottom: -100px;
+}
+
+.input {
+    display: flex;
+    top: 1406px;
+    width: 440px;
+    position: fixed;
+    left: 50%;
+    margin-left: -220px;
+    background-color: white;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+      height: 50px;
+
+}
+
+#defaultinput {
+    display: flex;
+    top: 478px;
+    width: 440px;
+    position: fixed;
+    left: 50%;
+    margin-left: -220px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+      height: 50px;
+
+}
+
+.space {
+      margin: 0;
+  padding: 0;
+  width: 570px;
+  display: block;
+  height: 680px;
+}
+
+.msgcontainer {
+  margin: 0;
+  padding: 0;
+  width: 570px;
+  display: inline-block;
+  height: 80px;
+}
+
+.scroll{
+  top: 10%;
+}
+
+#name {
+  position: fixed;
+  width: 2000px;
+  margin-left: -1000px;
+  left:50%;
+  top: 50%;
+  margin-top: -800px;
+}
+
+#phone {
+  position: fixed;
+  width: 2000px;
+  margin-left: -1000px;
+  left:50%;
+  top: 50%;
+  margin-top: -800px;
+  z-index: -999;
+}
+
+
+#screen {
+  position: fixed;
+  width: 2000px;
+  margin-left: -1000px;
+  left:50%;
+  top: 50%;
+  margin-top: -800px;
+ /* z-index: -999;*/
+ mix-blend-mode: color-dodge;
+}
+
+#title{
+  position: fixed;
+  height: 500px;
+  top: 50%;
+  margin-top: -250px;
+  width: 1000px;
+  left:50%;
+  margin-left: -480px;
+  font-family: 'Cutive Mono';
+  text-align: center;
+  line-height: 500px;
+  color: white;
+  font-size: 24pt;
+}
+
+#titleReflection{
+  position: fixed;
+  height: 500px;
+  top: 50%;
+  margin-top: -250px;
+  width: 1000px;
+  left:50%;
+  margin-left: -480px;
+  font-family: 'Cutive Mono';
+  text-align: center;
+  line-height: 500px;
+  color: white;
+  font-size: 24pt;
+  transform: rotateX(180deg) scaleY(1.6); 
+}
+
+
+#background {
+    width: 1920px;
+    position: fixed;
+    margin-left: -100px;
+    animation: blink 2s ease-in-out infinite;
+/*  background-image:url('https://i.ytimg.com/vi/d_SgV8U1sI8/maxresdefault.jpg')}*/}
+
+
+@keyframes blink {
+  0% { filter: brightness(70%); }
+  50% {
+    filter: brightness(90%);
+  }
+  100% {
+    filter: brightness(70%);
+  }}
+
+
+</style>
+
+
+
+<!-- HTML -->
+<img id="background" src="bg.png" 
+      data-0="filter[quadratic]: brightness(110%); transform[quadratic]: translateY(-100px);"
+        data-1500="filter[quadratic]: brightness(75%); transform[quadratic]: translateY(0px);"  
+        data-2000="filter[quadratic]: brightness(75%);  transform[quadratic]: translateY(0px);"
+        data-2500="filter[quadratic]: brightness(75%); transform[quadratic]: translateY(0px);"
+        data-3000="filter[quadratic]: brightness(75%); transform[quadratic]: translateY(0px);"  ></div>
+
+      <div id="title"></div>
+
+<div  class="phone" 
+        data-0="transform[cubic]:scale(0.8) translateY(1100px) rotate(30deg) ; perspective:300px; "
+        data-1500="transform[cubic]:scale(0.8) translateY(-5px) rotate(1.5deg) ; perspective:300px;  "
+        data-2000="transform[cubic]:scale(0.8) translateY(0px) rotate(1.5deg) ; perspective:300px; "
+        data-3000="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-4500="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px; "
+        data-5500="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-36000="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-52000="transform[cubic]:scale(1.5) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-53999="transform[cubic]:scale(1.5) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-54000="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-64000="transform[cubic]:scale(1) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+        data-65000="transform[cubic]:scale(0.8) translateY(0px) rotate(1.5deg) ; perspective:300px;"
+
+>
+        <div class="blur"      
+        data-0="filter[quadratic]:blur(0.01px) brightness(0%); transform[quadratic]:rotateX(30deg);"
+        data-1500="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"  
+        data-2000="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-2500="filter[quadratic]:blur(1px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-3000="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-42000="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-48000="filter[quadratic]:blur(2px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-50000="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-64000="filter[quadratic]:blur(0.01px) brightness(100%); transform[quadratic]:rotateX(1deg);"
+        data-65000="filter[quadratic]:blur(1px) brightness(100%); transform[quadratic]:rotateX(1.5deg);">
+        
+
+<div class="input">
+<div id="typewriter" data-3000="display:none; filter:blur(0px) opacity(1);"
+        data-3100="display:block; filter:blur(0px) opacity(1);"
+        data-5400="display:block; filter:blur(0px) opacity(1);" 
+        data-5500="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme1"></p>
+</div>
+
+<div id="typewriter" data-6500="display:none; filter:blur(0px) opacity(1);"
+        data-6600="display:block; filter:blur(0px) opacity(1);"
+        data-7900="display:block; filter:blur(0px) opacity(1);" 
+        data-8000="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme2"></p>
+</div>
+
+<div id="typewriter" data-13500="display:none; filter:blur(0px) opacity(1);"
+        data-13600="display:block; filter:blur(0px) opacity(1);"
+        data-15400="display:block; filter:blur(0px) opacity(1);" 
+        data-15500="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme3"></p>
+</div>
+
+<div id="typewriter" data-16500="display:none; filter:blur(0px) opacity(1);"
+        data-16600="display:block; filter:blur(0px) opacity(1);"
+        data-18400="display:block; filter:blur(0px) opacity(1);" 
+        data-18500="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme4"></p>
+</div>
+
+<div id="typewriter" data-30900="display:none; filter:blur(0px) opacity(1);"
+        data-31000="display:block; filter:blur(0px) opacity(1);"
+        data-32900="display:block; filter:blur(0px) opacity(1);" 
+        data-33000="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme5"></p>
+</div>
+
+<div id="typewriter" data-54000="display:none; filter:blur(0px) opacity(1);"
+        data-54100="display:block; filter:blur(0px) opacity(1);"
+        data-55000="display:block; filter:blur(0px) opacity(1);" 
+        data-55100="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme6"></p>
+</div>
+
+<div id="typewriter" data-59000="display:none; filter:blur(0px) opacity(1);"
+        data-59100="display:block; filter:blur(0px) opacity(1);"
+        data-62000="display:block; filter:blur(0px) opacity(1);" 
+        data-62100="display:none; filter:blur(10px) opacity(0);">
+  <p id="bubme7"></p>
+</div>
+
+</div>
+
+        <div class="scroll"        
+        data-5500="transform[swing]:translateY(0px);"
+        data-6500="transform[swing]:translateY(-85px);"
+        data-8000="transform[swing]:translateY(-85px);"
+        data-9000="transform[swing]:translateY(-170px);"
+        data-11500="transform[swing]:translateY(-170px);"
+        data-12500="transform[swing]:translateY(-255px);"
+        data-15500="transform[swing]:translateY(-255px);"
+        data-16500="transform[swing]:translateY(-340px);"
+        data-18500="transform[swing]:translateY(-340px);"
+        data-19500="transform[swing]:translateY(-425px);"
+        data-21500="transform[swing]:translateY(-425px);"
+        data-22500="transform[swing]:translateY(-510px);"
+        data-23500="transform[swing]:translateY(-510px);"
+        data-24500="transform[swing]:translateY(-595px);"
+        data-26500="transform[swing]:translateY(-595px);"
+        data-27500="transform[swing]:translateY(-510px);"
+        data-30000="transform[swing]:translateY(-510px);"
+        data-31000="transform[swing]:translateY(-595px);"
+        data-34000="transform[swing]:translateY(-595px);"
+        data-35000="transform[swing]:translateY(-680px);"
+        data-37000="transform[swing]:translateY(-680px);"
+        data-38000="transform[swing]:translateY(-765px);"
+        data-39000="transform[swing]:translateY(-765px);"
+        data-40000="transform[swing]:translateY(-680px);" 
+        data-43000="transform[swing]:translateY(-680px);"
+        data-44000="transform[swing]:translateY(-765px);"
+        data-47000="transform[swing]:translateY(-765px);"
+        data-48000="transform[swing]:translateY(-680px);"
+        data-51000="transform[swing]:translateY(-680px);"
+        data-52000="transform[swing]:translateY(-765px);"
+        data-55000="transform[swing]:translateY(-765px);"
+        data-56000="transform[swing]:translateY(-850px);"
+        data-58000="transform[swing]:translateY(-850px);"
+        data-59000="transform[swing]:translateY(-935px);"
+        data-62000="transform[swing]:translateY(-935px);"
+        data-63000="transform[swing]:translateY(-1020px);">
+
+<div class="space"></div>
+<div class="msgcontainer">
+    <div class="bubbleYou">
+    <p>
+    missing u already
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleMe">
+    <p>
+    Miss you too! <i class="em em-kissing_heart" style="font-size: 17pt;"></i>
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="date"> <b>Today&nbsp;</b>2:11 PM</div>
+<div class="date2"> <b>Today&nbsp;</b>11:45 PM</div>
+
+<div class="msgcontainer">
+    <div class="bubbleYou" style="display: none">
+    <p>
+    hey babe
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+
+<div class="msgcontainer">
+    <div class="bubbleYou">
+    <p>
+    hey babe
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+
+    <div class="bubbleYou" data-0="transform[cubic]:translateY(100px); filter:blur(10px) opacity(0);"
+        data-1700="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+         data-2200="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+          data-2700="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);">
+    <p>
+    ...
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+
+    <div class="bubbleYou" style="margin-left: -70px;" 
+    data-2700="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-3700="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+    >
+    <p>
+    are you awake?
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+
+
+<div class="msgcontainer">
+    <div class="bubbleMe"
+    data-5500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-6500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    Yeah I am
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleMe"
+    data-8000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-9000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    What's up?
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleYou"
+     data-11500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-12500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    do you have a minute
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleMe"
+    data-15500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-16500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    Yeah I can talk, what's up?
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleMe"
+    data-18500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-19500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    It's late, are you okay??
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleYou"
+     data-21500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-22500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    im ok
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+    <div class="bubbleYou" data-23500="transform[cubic]:translateY(100px); filter:blur(10px) opacity(0);"
+        data-24500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+         data-26500="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+          data-27500="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);">
+    <p>
+    ...
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+
+    <div class="bubbleYou" style="margin-left: -70px;"
+     data-30000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-31000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    been thinking about stuff…
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+
+<div class="msgcontainer">
+    <div class="bubbleMe"
+    data-34000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-35000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    What stuff? :o
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+    <div class="bubbleYou" data-37000="transform[cubic]:translateY(100px); filter:blur(10px) opacity(0);"
+        data-38000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+         data-40000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+          data-41000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);">
+    <p>
+    ...
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+    <div class="bubbleYou" style="margin-left: -70px;" 
+        data-43000="transform[cubic]:translateY(100px); filter:blur(10px) opacity(0);"
+        data-44000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+         data-47000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);"
+          data-48000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);">
+    <p>
+    ...
+    </p>
+  <span class="arrowU"></span>
+</div>
+
+<div class="msgcontainer">
+    <div class="bubbleYou" style="margin-top: -60px;" 
+     data-51000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-52000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+ <p id="morph">
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+
+<div class="msgcontainer">
+    <div class="bubbleMe" style="margin-top: -20px;"
+    data-55000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-56000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p id="morph2">
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleYou" id="adjust1" 
+     data-58000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-59000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+ <p id="morph3">
+    </p>
+  <span class="arrowU"></span>
+</div></div>
+
+<div class="msgcontainer">
+    <div class="bubbleMe" id="adjust2"
+     data-62000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-63000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+ <p id="morph4">
+    </p>
+  <span class="arrow"></span>
+</div></div>
+
+<!-- <div class="msgcontainer">
+    <div class="bubbleMe"
+    data-34000="transform[cubic]:translateY(100px) ;filter:blur(10px) opacity(0);"
+    data-35000="transform[cubic]:translateY(0px) ;filter:blur(0px) opacity(1);">
+    <p>
+    What stuff?
+    </p>
+  <span class="arrow"></span>
+</div></div> -->
+
+
+
+</div>                
+<img id="phone" src="phone.png"> 
+<img id="screen" src="screen.png"> 
+<img id="name" src="name.png"> 
+</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/js/ion.sound.min.js"></script>
+<script>
+    ion.sound({
+        sounds: [
+            {name: "ambiance"},
+        ],
+
+        // main config
+        path: "sounds/",
+        preload: true,
+        multiplay: true,
+        volume: 0.6
+    });
+    ion.sound.play("ambiance", {
+    volume: 0.8,
+    loop: true
+});
+
+	var s = skrollr.init({   render: function(data) {
+            //make sure to include this in skrollr if there is extra margin or padding at bottom of viewport
+            forceHeight: false;
+        }});
+
+  (function() { 
+  let toggle = (element) => {
+    $("#screen").css({ "opacity": element ? "0.65" : "0.45" });
+  },
+  flicker = () => {
+    toggle(Math.random() > .5), 
+    setTimeout(flicker, 500 * Math.random() * .2);
+  }; 
+  flicker();
+})();
+
+
+  $('#title').typeIt({
+     speed: 60,
+     autoStart: false
+})
+.tiPause(800)
+.tiType('Perrso')
+.tiPause(400)
+.tiSettings({speed: 40})
+.tiDelete(3)
+.tiSettings({speed: 60})
+.tiPause(100)
+.tiType('sonal')
+.tiPause(600)
+.tiType(' Message')
+.tiPause(600)
+.tiType('.');
+
+
+
+  $('#bubme1').typeIt({
+     speed: 50,
+     autoStart: false
+})
+
+.tiType('Ummm... I')
+.tiPause(300)
+.tiSettings({speed: 30})
+.tiDelete()
+.tiType('Yeah I am');
+
+  $('#bubme2').typeIt({
+     speed: 30,
+     autoStart: false
+})
+
+  .tiType("What's up?");
+
+    $('#bubme3').typeIt({
+     speed: 30,
+     autoStart: false
+})
+
+  .tiType("Yeah...?")
+  .tiPause(100)
+  .tiDelete()
+  .tiSettings({speed: 10})
+  .tiType("Yeah I can talk, what's up?");
+
+      $('#bubme4').typeIt({
+     speed: 30,
+     autoStart: false
+})
+
+  .tiType("It's late, are you okay?");
+
+        $('#bubme5').typeIt({
+     speed: 30,
+     autoStart: false
+})
+
+  .tiType("What stuff? :o");
+
+
+
+
+
+
+var textArray = [
+    'i think we should go our separate ways',
+    "what's your stance on cybersecurity and data privacy?",
+    "just thinking about how amazing you are... love you",
+    "can you send me your nudes",
+    "do you ever think about other men?"
+];
+var randomNumber = Math.floor(Math.random()*textArray.length);
+
+document.getElementById('morph').innerHTML = textArray[randomNumber];
+
+if (randomNumber==0) {
+              $('#bubme6').typeIt({
+     speed: 50,
+     autoStart: false
+})
+  .tiType("Where is this coming from???");
+
+                $('#bubme7').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Wait no");
+
+  document.getElementById('morph2').innerHTML ='Where is this coming from???';
+  document.getElementById('morph3').innerHTML ="the feeling isn't really there anymore... bye";
+  document.getElementById('morph4').innerHTML ="Wait no";
+   document.getElementById('adjust2').style.marginTop = "70px";
+}
+
+if (randomNumber==1) {
+              $('#bubme6').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("It's definitely scary to know")
+  .tiEmpty()
+  .tiType("that everything we say here")
+  .tiEmpty()
+  .tiType("is all permanently recorded");
+
+                $('#bubme7').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Yes, I agree");
+
+   document.getElementById('morph2').innerHTML ="It's definitely scary to know that everything we say here is all permanently recorded";
+   document.getElementById('morph3').innerHTML ="mhm, make sure to use multiple VPNs and proxies at all times.";
+   document.getElementById('morph4').innerHTML ="Yes, I agree";
+   document.getElementById('adjust2').style.marginTop = "110px";
+   document.getElementById('adjust1').style.marginTop = "70px";
+}
+
+if (randomNumber==3) {
+              $('#bubme6').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Tom... not this again...");
+
+                $('#bubme7').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Only if you behave >:)");
+
+   document.getElementById('morph2').innerHTML ='Tom... not this again...';
+   document.getElementById('morph3').innerHTML ="please... i will die without it";
+   document.getElementById('morph4').innerHTML ="Only if you behave >:)";
+}
+
+if (randomNumber==2) {
+              $('#bubme6').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Awww, I love you too baby");
+
+                $('#bubme7').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Ok, I'll see you soon <3");
+
+  document.getElementById('morph2').innerHTML ='Awww, I love you too baby';
+  document.getElementById('morph3').innerHTML ="cant wait for you to come back home";
+   document.getElementById('morph4').innerHTML ="Ok, I'll see you soon <3";
+}
+
+if (randomNumber==4) {
+              $('#bubme6').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("Yeah, all the time.");
+
+                $('#bubme7').typeIt({
+     speed: 30,
+     autoStart: false
+})
+  .tiType("It's only natural, right?");
+
+  document.getElementById('morph2').innerHTML ='Yeah, all the time.';
+  document.getElementById('morph3').innerHTML ="are you serious?!??";
+   document.getElementById('morph4').innerHTML ="It's only natural, right?";
+}
+
+</script>
+</body>
+</html>
