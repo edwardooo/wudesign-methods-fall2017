@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example loading and filtering of Weather Forecast Dataset</title>
+</head>
+<body>
+<style type="text/css">
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.box { 
+  width: 0.2%;
+  height: 0;
+    padding-bottom: 17%;
+  margin: 3%;
+  display: inline-flex;
+background-color: black;
+
+ }
+ .n1{
+    color: black;
+    background-color: black;
+ }
+
+  .n2{
+    color: black;
+    background-color: black;
+ }
+   .n3{
+    color: black;
+    background-color: black;
+ }
+
+  .n10{
+    color: black;
+    background-color: black;
+ }
+
+ .container{
+  background-color: lightgrey;
+
+  text-align: center;
+  height: 500px;
+  top: 50%;
+ position: absolute; 
+ position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80%;
+   vertical-align: middle;
+   padding-top: 14%;
+   padding-bottom: 5%;
+
+ }
+
+</style>
+<div class="container">
+<div class="box n1"></div>
+<div class="box n2"></div>
+<div class="box n3"></div>
+<div class="box n4"></div>
+<div class="box n5"></div>
+<div class="box n6"></div>
+<div class="box n7"></div>
+<div class="box n8"></div>
+<div class="box n9"></div>
+<div class="box n10"></div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+	<script>
+
+     // var box1= document.getElementsByClassName('box');
+   // $('.box').style.transform = "rotate(7deg)";
+
+		jQuery(function($){
+
+      var dataUrl = 'https://gist.githubusercontent.com/abesiemsen/916d376e77b659a793d9d8843e3287ee/raw/10-day-forecast.json';
+			
+      jQuery.getJSON(dataUrl, function(forecastData) {
+        
+        console.log(forecastData);
+        
+        var highTemps = forecastData.map(function(day){
+          return day.high.fahrenheit;
+        });
+
+        console.log(highTemps);
+
+
+          var elems = document.getElementsByClassName('box');
+
+
+
+for (var i=0;i<elems.length;i+=1){
+  (function(i){
+
+    window.setTimeout(function(){
+      // elems[i].style.transform = "rotate("+ highTemps[i]+"deg)";
+
+      anime({
+  targets: elems[i],
+  rotate: (highTemps[i]-69)*10,
+  direction: 'alternate',
+  loop: false,
+  duration:(highTemps[i]-69)*1000,
+  elasticity:500
+});
+    }, i * 100);
+
+  }(i));
+  
+}
+      });
+
+		});
+
+
+
+
+	</script>
+</body>
+</html>

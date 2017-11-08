@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example loading and filtering of Weather Forecast Dataset</title>
+</head>
+<body>
+<style type="text/css">
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.box { 
+  width: 3%;
+  height: 0;
+    padding-bottom: 3%;
+  margin: 3%;
+  display: inline-flex;
+/*background-color: white;*/
+border-radius: 50%;
+/* box-shadow: rgba(90,90,90,0.9) 0 0 100px;*/
+font-family: arial;
+font-size: 17pt;
+vertical-align: middle;
+text-align: left;
+
+
+ }
+
+ .container{
+  background-color: lightgrey;
+
+  text-align: center;
+  height: 500px;
+ position: absolute; 
+ position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80%;
+   vertical-align: middle;
+   padding-top: 18%;
+   padding-bottom: 5%;
+
+ }
+
+</style>
+<div class="container">
+<div class="box n1"></div>
+<div class="box n2"></div>
+<div class="box n3"></div>
+<div class="box n4"></div>
+<div class="box n5"></div>
+<div class="box n6"></div>
+<div class="box n7"></div>
+<div class="box n8"></div>
+<div class="box n9"></div>
+<div class="box n10"></div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+	<script>
+
+     // var box1= document.getElementsByClassName('box');
+   // $('.box').style.transform = "rotate(7deg)";
+
+   // const url ='https://jikan.me/api/anime/1';
+  //  fetch(url)
+  //   .then((resp) => resp.json())
+  // .then(function(data) {
+  //   // Here you get the data to modify as you please
+  //   })
+  // .catch(function(error) {
+  //   // If there is any error you will catch them here
+  // });   
+
+
+
+
+
+
+		jQuery(function($){
+
+      var dataUrl = 'https://gist.githubusercontent.com/abesiemsen/916d376e77b659a793d9d8843e3287ee/raw/10-day-forecast.json';
+      var dataUrlAnime ='https://jikan.me/api/anime/1';
+
+     
+			
+      jQuery.getJSON(dataUrl, function(forecastData) {
+        
+        console.log(forecastData);
+        
+        var highTemps = forecastData.map(function(day){
+          return day.high.fahrenheit;
+        });
+
+        console.log(highTemps);
+
+
+         var dataUrlAnime ='https://jikan.me/api/anime/392/episodes';
+
+          jQuery.getJSON(dataUrlAnime, function(animeData) { 
+            console.log(animeData);
+
+            var epTitle = animeData.episode.map(function(ep){
+              return ep["title-japanese"];
+            });
+
+             var elems = document.getElementsByClassName('box');
+
+
+
+
+for (var i=0;i<elems.length;i+=1){
+  (function(i){
+
+    window.setTimeout(function(){
+      // elems[i].style.transform = "rotate("+ highTemps[i]+"deg)";
+
+    elems[i].innerHTML = epTitle[highTemps[i]];
+    elems[i].style.filter = "opacity("+((highTemps[i]*100)-7250)/10 + "%)";
+     anime({
+  targets: elems[i],
+  translateY: -((highTemps[i]*100)-7250)/1.5,
+  translateX: ((highTemps[i]*100)-7250)/10,
+  scale: ((highTemps[i]*100)-7250)/20,
+  rotate:((highTemps[i]*100)-7250)/10,
+  // scale: [
+  // { value: 1.5, duration: 200, easing: 'easeInOutQuad', loop:true }
+  // ],
+  direction: 'alternate',
+  loop: true,
+  duration: 2000,
+  elasticity:300,
+});
+      // if (highTemps[i]>72) {elems[i].style.boxShadow="rgba(180,90,90,0.8) 0 0 100px";}
+      // else{elems[i].style.boxShadow="rgba(90,90,180,0.8) 0 0 100px";}
+        
+    }, i * 50);
+      }
+
+  (i));
+  
+}
+          });
+
+         
+      });
+
+		});
+
+
+
+
+	</script>
+</body>
+</html>
