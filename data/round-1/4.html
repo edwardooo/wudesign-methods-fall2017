@@ -296,7 +296,13 @@ overflow:hidden;
             var artist = animeData["tag_string_artist"].replace(/_/g, ' ');
             var character = animeData["tag_string_character"].replace(/ /g, ', ').replace(/_/g, ' ');
             var series = animeData["tag_string_copyright"].replace(/_/g, ' ').replace(/ .*/,'');
-            var henimgsrc = "https://danbooru.donmai.us" + animeData["file_url"];
+            console.log(animeData["file_url"].slice(1,7));
+            if (animeData["file_url"].slice(1,7) == "/cached" ) {
+              var imgurl=animeData["file_url"].slice(7);
+            }else {
+                    var imgurl=animeData["file_url"];
+            };
+             var henimgsrc = "https://danbooru.donmai.us" + animeData["preview_file_url"];
 
             var henimg = document.createElement("img");
             henimg.src = henimgsrc;
